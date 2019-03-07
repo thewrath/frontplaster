@@ -1,0 +1,23 @@
+{
+  "name": "frontplaster",
+  "version": "1.0.0",
+  "description": "A tiny javascript library that allows you to structure your frontend code and gives you access to useful functions ",
+  "main": "dist/frontplaster.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Le Goff",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0"
+  },
+  "dependencies": {
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
