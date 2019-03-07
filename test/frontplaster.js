@@ -232,4 +232,4 @@ FrontPlaster.prototype.table_paginator = function () {
     buttons += "<input class='" + next_class + "' type='button' id='next_button' value='" + next_text + "' onclick='sort(" + (cur + 1) + ")' " + nextDis + ">";
     return buttons;
   };
-};
+};exports.FrontPlaster = FrontPlaster;

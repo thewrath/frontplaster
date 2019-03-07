@@ -10,3 +10,4 @@ FrontPlaster.prototype.update = function(callback){
     window.document.onload = callback();
 }
 
+
