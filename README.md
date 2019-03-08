@@ -1,4 +1,7 @@
 # FrontPlaster JS 
+[![HitCount](http://hits.dwyl.io/thewrath/https://github.com/thewrath/frontplaster.svg)](http://hits.dwyl.io/thewrath/https://github.com/thewrath/frontplaster)
+
+
 
 A tiny javascript library that allows you to structure your frontend code and gives you access to useful functions.
 
