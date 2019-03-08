@@ -16,17 +16,17 @@ function clear(){
 }
 
 function build(){
-    return src('src/**/*.js')
+    return src('src/**')
         .pipe(babel())
-        .pipe(dest('dist/part/'))
-}
-
-function jsBundle(){
-    return src('dist/part/**/*.js')
-        .pipe(concat('frontplaster.js'))
         .pipe(dest('dist/'))
 }
 
+function jsBundle(){
+    return src(['dist/renderer/utils/utils.js', 'dist/renderer/geom/geom.js', 'dist/renderer/events/events.js', 'dist/renderer/display/display.js', 'dist/renderer/text/text.js'])
+        .pipe(concat('frontplaster.js'))
+        .pipe(dest('dist/'))
+}
+ 
 function jsTestBundle(){
     return src('dist/frontplaster.js')
         .pipe(dest('test/dist'))
@@ -60,4 +60,4 @@ exports.build = build;
 exports.minify = series(clear, build, jsBundle, jsMinify);
 exports.test = series(mochaTest);
 exports.watch = parallel(watchMochaTest, watchMochaSrc);
-exports.default = series(clear, build, jsBundle);
+exports.default = series(clear, build, jsBundle, jsTestBundle);

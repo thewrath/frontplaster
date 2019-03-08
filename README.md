@@ -3,7 +3,7 @@
 
 
 
-A tiny javascript library that allows you to structure your frontend code and gives you access to useful functions.
+A tiny javascript library  that gives you access to graphical functions to create WebGL-based GUIs .
 
 This library does not dot everything, the idea is to have a very simple library in its structure in order to make it evolve easily. 
 You can upgrade it yourself by simply adding the features you want. 
