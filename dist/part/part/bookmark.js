@@ -1,4 +1,4 @@
-FrontPlaster.prototype.bookmark = function () {
+FrontPlaster.prototype.BookmarkManager = function (active_class, passive_class, toggle_action_click, toggle_action_hover, toggle_request, find_one_request) {
   /*
   How to use : 
   

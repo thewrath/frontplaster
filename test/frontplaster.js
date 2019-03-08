@@ -1,3 +1,9 @@
+/*
+  Filename: frontplaser.js
+  Descr: The library entry point don't put your new fonctions here.
+  User: Thomas LE GOFF
+  Date: 08/3/2019
+*/
 function FrontPlaster() {
   this.version = "1.0.0";
 }
@@ -6,10 +12,10 @@ FrontPlaster.prototype.init = function (callback) {
   callback();
 };
 
-FrontPlaster.prototype.update = function (callback) {
+FrontPlaster.prototype.update = function (window = null, callback) {
   window.document.onload = callback();
 };
-FrontPlaster.prototype.bookmark = function () {
+FrontPlaster.prototype.BookmarkManager = function (active_class, passive_class, toggle_action_click, toggle_action_hover, toggle_request, find_one_request) {
   /*
   How to use : 
   
@@ -232,4 +238,5 @@ FrontPlaster.prototype.table_paginator = function () {
     buttons += "<input class='" + next_class + "' type='button' id='next_button' value='" + next_text + "' onclick='sort(" + (cur + 1) + ")' " + nextDis + ">";
     return buttons;
   };
-};exports.FrontPlaster = FrontPlaster;
+};
+ exports.FrontPlaster = FrontPlaster;

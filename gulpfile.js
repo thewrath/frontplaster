@@ -29,7 +29,8 @@ function jsBundle(){
 
 function jsTestBundle(){
     return src('dist/frontplaster.js')
-        .pipe(insert.append('exports.FrontPlaster = FrontPlaster;'))
+        .pipe(dest('test/dist'))
+        .pipe(insert.append('\n exports.FrontPlaster = FrontPlaster;'))
         .pipe(dest('test/'))
 }
 
