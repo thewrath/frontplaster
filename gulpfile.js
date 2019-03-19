@@ -22,13 +22,13 @@ function build(){
 }
 
 function jsBundle(){
-    return src(['dist/renderer/utils/utils.js', 'dist/renderer/geom/geom.js', 'dist/renderer/events/events.js', 'dist/renderer/display/display.js', 'dist/renderer/text/text.js'])
+    return src(['dist/index.js', 'dist/widgets/*.js'])
         .pipe(concat('frontplaster.js'))
         .pipe(dest('dist/'))
 }
  
 function jsTestBundle(){
-    return src('dist/frontplaster.js')
+    return src(['dist/frontplaster.js', 'dist/lib/*.js'])
         .pipe(dest('test/dist'))
         .pipe(insert.append('\n exports.FrontPlaster = FrontPlaster;'))
         .pipe(dest('test/'))
@@ -51,7 +51,7 @@ function watchMochaTest() {
     gulp.watch(['test/**'], gulp.series(mochaTest));
 }
 
-function watchMochaSrc(){
+function watchSrc(){
     gulp.watch(['src/**'], gulp.series(clear, build, jsBundle, jsTestBundle)); 
 }
 
@@ -59,5 +59,5 @@ function watchMochaSrc(){
 exports.build = build;
 exports.minify = series(clear, build, jsBundle, jsMinify);
 exports.test = series(mochaTest);
-exports.watch = parallel(watchMochaTest, watchMochaSrc);
+exports.watch = parallel(watchSrc);
 exports.default = series(clear, build, jsBundle, jsTestBundle);
