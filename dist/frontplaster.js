@@ -36,11 +36,23 @@ FrontPlaster.prototype.init = function () {
 };
 
 FrontPlaster.prototype.update = function () {
+  push();
+
+  if (this.canvas_type === WEBGL) {
+    translate(-this.window_width / 2, -this.window_height / 2);
+  }
+
   if (this.scenes[this.current_scene_index] != null) {
     this.scenes[this.current_scene_index].update();
   }
 
   ;
+
+  if (this.canvas_type === WEBGL) {
+    translate(+this.window_width / 2, +this.window_height / 2);
+  }
+
+  pop();
 };
 
 FrontPlaster.prototype.resize = function () {
@@ -185,6 +197,15 @@ UsineABulle.prototype = {
       this.vity = Math.abs(this.vity);
     }
   }
+};
+//bubles widget
+var circleWidget = new Widget("circle", 0, 0);
+
+circleWidget.init = function () {};
+
+circleWidget.update = function () {
+  fill(50);
+  ellipse(0, 0, 16, 16);
 };
 //bubles widget
 var clockWidget = new Widget("clock", 0, 0);

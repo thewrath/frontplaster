@@ -42,7 +42,15 @@ FrontPlaster.prototype.init = function(){
 }
 
 FrontPlaster.prototype.update = function(){
+    push()
+    if(this.canvas_type === WEBGL){
+        translate(-this.window_width/2, -this.window_height/2);
+    }
     if(this.scenes[this.current_scene_index] != null){this.scenes[this.current_scene_index].update();};
+    if(this.canvas_type === WEBGL){
+        translate(+this.window_width/2, +this.window_height/2);
+    }
+    pop()
 }
 
 FrontPlaster.prototype.resize = function(){

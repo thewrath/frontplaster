@@ -1,7 +1,7 @@
 var fp;
 
 function setup(){
-    fp = new FrontPlaster(1920, 1080, "frontplaster_canvas", "frontplaster_div");
+    fp = new FrontPlaster(1920, 1080, "frontplaster_canvas", "frontplaster_div", WEBGL);
     var sceneTest = new Scene("test");
     sceneTest.addWidget(bublesWidget);
     sceneTest.addWidget(mouseDrawerWidget);
